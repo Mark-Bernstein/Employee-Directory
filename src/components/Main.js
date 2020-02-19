@@ -18,10 +18,10 @@ class Main extends Component {
 
     searchEmployees = () => {
         API.search(10)
-        .then(res => {
-            this.setState({results: res.data.results});
-            console.log(this.state.results)
-        }).catch(err => console.log(err))
+            .then(res => {
+                this.setState({ results: res.data.results });
+                console.log(this.state.results)
+            }).catch(err => console.log(err))
 
     };
 
@@ -42,11 +42,11 @@ class Main extends Component {
         return (
             <Wrapper>
                 <Nav />
-                    <SearchBox
-                        search={this.state.search}
-                        handleFormSubmit={this.handleFormSubmit}
-                        handleInputChange={this.handleInputChange}
-                    />
+                <SearchBox
+                    search={this.state.search}
+                    handleFormSubmit={this.handleFormSubmit}
+                    handleInputChange={this.handleInputChange}
+                />
                 <DataTable results={this.state.results} />
             </Wrapper>
         );
