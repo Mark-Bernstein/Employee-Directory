@@ -11,13 +11,13 @@ class Main extends Component {
         search: ""
     };
 
-    // When this component mounts, search for the movie "The Matrix"
+    // When this component mounts, render the random default employees
     componentDidMount() {
-        this.searchEmployeees();
+        this.searchEmployees();
     }
 
-    searchEmployeees = () => {
-        API.search(20)
+    searchEmployees = () => {
+        API.search(10)
         .then(res => {
             this.setState({results: res.data.results});
             console.log(this.state.results)
@@ -35,7 +35,7 @@ class Main extends Component {
     // When the form is submitted, search the OMDB API for the value of `this.state.search`
     handleFormSubmit = event => {
         event.preventDefault();
-        this.searchEmployeees(this.state.search);
+        this.searchEmployees(this.state.search);
     };
 
     render() {
@@ -47,7 +47,7 @@ class Main extends Component {
                         handleFormSubmit={this.handleFormSubmit}
                         handleInputChange={this.handleInputChange}
                     />
-                <DataTable results={this.state.results}/>
+                <DataTable results={this.state.results} />
             </Wrapper>
         );
     }

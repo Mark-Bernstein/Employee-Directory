@@ -17,7 +17,7 @@ function SearchBox(props) {
                 <br />
                 <button onClick={props.handleFormSubmit} className="btn btn-primary">
                     Search
-        </button>
+                </button>
             </div>
         </form>
     );
